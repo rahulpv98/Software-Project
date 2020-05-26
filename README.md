@@ -7,7 +7,7 @@ This is a django based web application. One need to install python, django and o
 2. Install `virtualenvwrapper` and add it to your terminal path.
 3. Clone the repository and create the virtual environment
     ```
-      $ git clone https://github.com/abhishekbvs/blog-aggregator.git
+      $ git clone https://github.com/rahulpv98/blog-aggregator.git
       $ cd blog-aggregator
       $ mkvirtualenv --python=python3 webapp
       $ workon webapp
