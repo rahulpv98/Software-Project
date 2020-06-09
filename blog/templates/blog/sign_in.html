@@ -1,0 +1,23 @@
+{% load static %}
+
+<html>
+<head>
+    <title> IOT Wiki</title>
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+</head>
+<body>
+	{% if user.is_authenticated %}
+		<a href="{% url 'log_out' %}">Logout</a>
+	{% else %}
+	<div class="login-box">
+		<img src="{% static 'images/avatar.png' %}" class="avatar">
+    	<h1>Login Here</h1>
+		<form method="post">
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type="submit" value="Login">
+		</form>
+	</div>
+	{% endif %}
+</body>
+</html>

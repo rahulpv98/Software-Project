@@ -1,0 +1,120 @@
+{% load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  .header {
+    padding: 80px;
+    text-align: center;
+    background: linear-gradient(to right, #11052b, #d9aa77 150%);
+    color: white;
+  }
+
+  /* Increase the font size of the heading */
+  .header h1 {
+    font-size: 40px;
+  }
+
+  /* Style the top navigation bar */
+  .navbar {
+    overflow: hidden;
+    background: linear-gradient(to right , #ab845b, #11052b 70%);
+  }
+
+  /* Style the navigation bar links */
+  .navbar a {
+    float: left;
+    display: block;
+    color: #11052b;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+  }
+
+  /* Right-aligned link */
+  .navbar a.right {
+    float: right;
+  }
+
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .fakeimg {
+
+  background: linear-gradient(to right, #11052b, #d9aa77 150%);
+  width: 15%;
+  color: white;
+  padding: 20px;
+
+}
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+  }
+
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+  }
+  </style>
+
+
+
+        <title>About</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+<body>
+
+  <div class="header">
+    <h1>Team Brute_Force</h1>
+    <h4>We want to make sure everyone receives as much as knowledge as possible</h4>
+  </div>
+
+  <div class="navbar">
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'content' %}">Contents</a>
+    <a href="{% url 'post_new' %}">Add Post</a>
+    <a href="/topic_dis/">Categories</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'log_out' %}" class="right">Log Out</a>
+    {% else %}
+    <a href="{% url 'signup' %}" class="right">Sign Up</a>
+    <a href="{% url 'signin' %}" class="right">Sign In</a>
+    {% endif %}
+
+  </div>
+  <div style="background-image: url('../../static/images/6.jpg'); margin: 20px;opacity:1; background-size:cover">
+
+  <br/>  <h3 style="text-align: center;"><em><i>We are a core group of IoT Enthusiasts looking to learn, share and grow together with the world.</i></em></h3>
+    <h4 style="text-align: center;"> Here we have provided the resources related to the Internet of Things, upon which readers can contribute or learn from it.</h4>
+    <h3>The Team</h3>
+    <div class="fakeimg" style="height:60px;">Rahul P V</div><br>
+    <div class="fakeimg" style="height:60px;">Gouri S Nair</div><br>
+    <div class="fakeimg" style="height:60px;">Niveda Giriraj</div><br/>
+    <div class="fakeimg" style="height:60px;">Mani Raghavendra</div><br/>
+    <div class="fakeimg" style="height:60px;">Sai Bhargav</div>
+        </div>
+    </body>
+</html>
